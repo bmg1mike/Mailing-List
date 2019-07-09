@@ -1,6 +1,7 @@
 const table = document.querySelector('tbody');
 const form = document.querySelector('form');
 const tr = document.querySelector('tr');
+const h6 = document.querySelector('h6');
 
 db.collection('mailingList').get().then(snapshot=>{
     console.log(snapshot.docs[1].data());
@@ -57,7 +58,7 @@ db.collection('mailingList').get().then(snapshot=>{
                           </div>
                           <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save</button>
+                              <!--<button type="button" class="btn btn-primary">Save</button>-->
                           </div>
                       </div>
                   </div>
@@ -65,7 +66,7 @@ db.collection('mailingList').get().then(snapshot=>{
                 
                 </td>
                 <!-- <td><button class="btn btn-sm btn-success">Update</button></td>
-                // <td><button class="btn btn-sm btn-danger">Delete</button></td>
+                 <td><button class="btn btn-sm btn-danger">Delete</button></td>
             </tr> -->
         `;
     });
@@ -96,6 +97,8 @@ form.addEventListener("submit",(e)=>{
     }
     db.collection('mailingList').add(Customer).then(()=>{
         console.log('Customer Added');
+        h6.innerHTML ="Customer Added";
+        h6.className = "bg-success text-secondary"
         
     })
         form.name.value = "";
