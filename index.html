@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+
+    <title>RH Mailing List</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-danger">
+        <a class="navbar-brand" href="#"><img src="https://rhbooks.com.ng/wp-content/uploads/2018/03/new-roving-heights-books-logoWHITE.png" alt="Rovingheights Logo" srcset="" class="img-fluid"></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="display-5 text-center">RH Contacts</h3>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-lg " data-toggle="modal" data-target="#modelId">
+                          Add A New Customer
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-center">New Customer</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card">
+                                            <div class="card-header">
+                                            </div>
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                      <label for="">Name</label>
+                                                      <input type="text"
+                                                        class="form-control" name="" id="name" aria-describedby="helpId" placeholder="">
+                                                      
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="">Email</label>
+                                                      <input type="text"
+                                                        class="form-control" name="" id="email" aria-describedby="helpId" placeholder="">
+                                                      
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="">Location</label>
+                                                      <select class="form-control" name="" id="location">
+                                                        <option ></option>
+                                                        <option>Abuja</option>
+                                                        <option>Lagos</option>
+                                                      </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="">Mailing List</label>
+                                                      <select class="form-control" name="mailinglist" id="">
+                                                        <option ></option>
+                                                        <option>Newsletter</option>
+                                                        <option>Mailing List</option>
+                                                      </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="">Phone Number</label>
+                                                      <input type="text"
+                                                        class="form-control" name="" id="phonenumber" aria-describedby="helpId" placeholder="">
+                                                      
+                                                    </div>
+                                                    <div class="form-group">
+                                                      <label for="">Genre</label>
+                                                      <textarea class="form-control" name="" id="genre" rows="3"></textarea>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-info btn-lg btn-block">Save</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" id="add">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered" id="customerTable">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Location</th>
+                                    <th>Preferred Genre</th>
+                                    <th></th>
+                                    <!-- <th></th>
+                                    <th></th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Button trigger modal -->
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAmik648SgiK7TmMnr4Zw1CmbIiDYA9OWI",
+    authDomain: "rh-mailing.firebaseapp.com",
+    databaseURL: "https://rh-mailing.firebaseio.com",
+    projectId: "rh-mailing",
+    storageBucket: "rh-mailing.appspot.com",
+    messagingSenderId: "541336830684",
+    appId: "1:541336830684:web:5567aed493e09169"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+<script src="/js/app.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+
+</body>
+</html>
