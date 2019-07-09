@@ -70,7 +70,15 @@ db.collection('mailingList').get().then(snapshot=>{
         `;
     });
 
-    $('#customerTable').DataTable();
+    $('#customerTable').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    });
 }).catch(err=>{
     console.log(err);
     
@@ -90,7 +98,12 @@ form.addEventListener("submit",(e)=>{
         console.log('Customer Added');
         
     })
-    Customer = {};
+        form.name.value = "";
+        form.email.value = "";
+        form.location.value = "";
+        form.phonenumber.value = "";
+        form.genre.value = "";
+        form.mailinglist.value = "";
 })
 
 tr.addEventListener('click',e=>{
